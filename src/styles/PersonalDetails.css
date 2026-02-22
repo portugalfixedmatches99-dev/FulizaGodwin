@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* Add to PersonalDetails.css and Home.css */
+.pd-container,
+.container {
+  max-width: 360px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 24px 16px 120px;
+   background: rgba(255, 255, 255, 0.80);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  position: relative;
+  z-index: 1;
+  
+}
+
+
+
+
+
+/* HEADER */
+.pd-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e5e7eb;
+}
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+.header-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* BRAND */
+.pd-brand {
+  text-align: center;
+  margin: 16px 0 24px;
+}
+.pd-brand .badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  color: #16823a;
+  background: #e6f7ee;
+  margin-bottom: 8px;
+}
+.pd-brand .title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #16a34a;
+  margin: 0;
+}
+.pd-brand .subtitle {
+  font-size: 13px;
+  font-weight: 500;
+  color: #6b7280;
+  margin: 6px 0 0;
+}
+
+/* FORM HEADER */
+.identify-title { font-size: 20px; font-weight: 700; text-align: center; color: #111827; }
+.identify-text { font-size: 14px; text-align: center; color: #6b7280; margin-bottom: 24px; }
+
+/* FORM GROUPS */
+.form-group { margin-bottom: 22px; }
+label { font-size: 13px; font-weight: 600; display: block; margin-bottom: 6px; color: #111827; }
+input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+  background: #f9fafb;
+  color: #111827;
+  transition: all 0.3s ease;
+}
+input:focus {
+  outline: none;
+  border-color: #22c55e;
+  box-shadow: 0 0 8px rgba(34,197,94,0.2);
+  background: #ffffff;
+}
+
+/* PHONE INPUT */
+.phone-input { display: flex; gap: 8px; }
+.prefix {
+  padding: 14px;
+  border-radius: 12px 0 0 12px;
+  background: #f1f5f4;
+  font-weight: 600;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+  border-right: none;
+}
+.phone-input input { flex: 1; border-radius: 0 12px 12px 0; border: 1px solid #e5e7eb; border-left: none; }
+
+/* ERROR TEXT */
+.error-text { font-size: 11px; color: #dc2626; margin-top: 4px; display: block; }
+
+
+.pd-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;        /* ← change from left: 50% */
+  right: 0;       /* ← add this */
+  width: 100%;
+  padding: 16px;
+  background: #ffffff;
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 100;
+  /* remove transform and max-width */
+}
+
+.verify-btn {
+  width: 90%;      /* ← match Home's continue-btn width */
+  max-width: 360px;
+  height: 54px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: not-allowed;
+  transition: all 0.2s ease;
+  display: block;
+}
+
+.secure-text {
+  font-size: 11px;
+  text-align: center;
+  color: #9ca3af;
+  width: 100%; /* ← ensure it doesn't push button */
+}
+.verify-btn.enabled { cursor: pointer; }
+.verify-btn.enabled:hover { filter: brightness(1.05); transform: scale(1.02); }
+.verify-btn.enabled:active { transform: scale(0.97); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+
+/* NOTIFICATIONS */
+.notification-overlay {
+  background: linear-gradient(90deg, #e6f7ee, #ffffff);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.3s ease;
+}
+.notification-overlay.show { opacity: 1; transform: translateY(0); }
+.notification-icon { font-size: 24px; flex-shrink: 0; }
+.notification-content { flex: 1; font-size: 14px; color: #333; }
+.notification-content strong { color: #1a1a1a; }
+.notification-time { color: #666; font-size: 12px; margin-top: 2px; }
+
+
+
+
+/* SPINNER */
+.spinner {
+  width: 20px; height: 20px;
+  border: 3px solid rgba(34,197,94,0.4);
+  border-top-color: #111827;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  display: inline-block;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
